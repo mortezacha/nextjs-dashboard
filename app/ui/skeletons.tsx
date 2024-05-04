@@ -18,15 +18,12 @@ export function CardSkeleton() {
   );
 }
 
-export function CardsSkeleton() {
-  return (
-    <>
-      <CardSkeleton />
-      <CardSkeleton />
-      <CardSkeleton />
-      <CardSkeleton />
-    </>
-  );
+// get a number and produce that much card skeleton (rewrite for this ability by me) 
+export function CardsSkeleton({ numbers }: { numbers: number }) {
+  const skeletons = Array.from({ length: numbers }, (_, index) => (
+    <CardSkeleton key={index} />
+  ));
+  return <>{skeletons}</>;
 }
 
 export function RevenueChartSkeleton() {
